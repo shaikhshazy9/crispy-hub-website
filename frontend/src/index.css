@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body {
+    background-color: #f8f5f0;
+    color: #1e1e1e;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  ::selection { background: #ffb800; color: #1e1e1e; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #f0ebe0; }
+  ::-webkit-scrollbar-thumb { background: #00b4c5; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #ffb800; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-gold-500 text-dark-900 font-bold px-7 py-3.5 rounded-full text-sm uppercase tracking-wider transition-all duration-300 hover:bg-gold-600 hover:shadow-gold hover:scale-105 active:scale-95;
+  }
+  .btn-teal {
+    @apply inline-flex items-center gap-2 bg-teal-500 text-white font-bold px-7 py-3.5 rounded-full text-sm uppercase tracking-wider transition-all duration-300 hover:bg-teal-600 hover:shadow-teal hover:scale-105 active:scale-95;
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-gold-500 text-gold-600 font-bold px-7 py-3.5 rounded-full text-sm uppercase tracking-wider transition-all duration-300 hover:bg-gold-500 hover:text-dark-900 hover:scale-105 active:scale-95;
+  }
+  .btn-outline-white {
+    @apply inline-flex items-center gap-2 border-2 border-white text-white font-bold px-7 py-3.5 rounded-full text-sm uppercase tracking-wider transition-all duration-300 hover:bg-white hover:text-dark-900 hover:scale-105;
+  }
+  .section-title {
+    @apply font-display text-4xl md:text-5xl font-bold text-dark-900;
+  }
+  .section-sub {
+    @apply font-accent text-teal-500 text-xl mb-2;
+  }
+  .section-pad {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+  .wrap {
+    @apply max-w-7xl mx-auto;
+  }
+  .food-card {
+    @apply bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-400 hover:-translate-y-2;
+  }
+  .badge {
+    @apply inline-block text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide;
+  }
+  .nav-link {
+    @apply text-sm font-semibold uppercase tracking-wider transition-colors duration-200 relative;
+  }
+  .input-field {
+    @apply w-full bg-cream-100 border border-cream-300 text-dark-900 text-sm px-4 py-3 rounded-xl placeholder-gray-400 focus:border-teal-400 focus:bg-white transition-all outline-none;
+  }
+  .circular-img {
+    @apply rounded-full object-cover border-4 border-white shadow-food;
+  }
+}
+
+@layer utilities {
+  .text-teal-gradient {
+    background: linear-gradient(135deg, #00b4c5, #007b8a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #ffb800, #f57f17);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .bg-hero-teal {
+    background: linear-gradient(135deg, #004d5a 0%, #007b8a 40%, #00b4c5 100%);
+  }
+  .bg-wave {
+    background: linear-gradient(180deg, #f8f5f0 0%, #ffffff 100%);
+  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .duration-400 { transition-duration: 400ms; }
+}
+
+/* Diagonal stripe decoration */
+.stripe-bg {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(0,180,197,0.04) 10px,
+    rgba(0,180,197,0.04) 20px
+  );
+}
+
+/* Hero wave bottom */
+.wave-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23f8f5f0' d='M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E") no-repeat bottom;
+  background-size: cover;
+}
+
+/* Price tag */
+.price-tag {
+  position: absolute;
+  background: #ffb800;
+  color: #1b3a4b;
+  font-weight: 900;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(255,184,0,0.4);
+}
+
+/* Order toast */
+.toast-enter { animation: toastIn 0.3s ease-out; }
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(100px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Category pill active */
+.cat-pill-active {
+  background: linear-gradient(135deg, #007b8a, #00b4c5);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0,180,197,0.4);
+}
+
+/* Dotted background pattern */
+.dot-pattern {
+  background-image: radial-gradient(circle, rgba(0,180,197,0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+}

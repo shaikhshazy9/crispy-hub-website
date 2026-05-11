@@ -1,0 +1,10 @@
+Place your menu PDF file here and name it exactly:
+
+  menu.pdf
+
+The "View Full Menu" button in the website will open this file.
+
+Steps:
+1. Copy your "Crispy Hub (1).pdf" file into this folder (frontend/public/)
+2. Rename it to: menu.pdf
+3. The button will now open the full menu PDF in a new tab.
