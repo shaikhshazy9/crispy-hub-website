@@ -48,13 +48,6 @@ export default function AdminLogin() {
             <p className="text-slate-400 text-sm">Crispy Hub Cafeteria & Restaurant</p>
           </div>
 
-          {/* Hint */}
-          <div className="bg-teal-500/10 border border-teal-500/20 rounded-xl px-4 py-3 mb-6">
-            <p className="text-teal-300 text-xs font-semibold">Demo credentials:</p>
-            <p className="text-teal-400 text-xs">Email: admin@crispyhub.ae</p>
-            <p className="text-teal-400 text-xs">Password: admin123</p>
-          </div>
-
           <form onSubmit={submit} className="flex flex-col gap-4">
             {/* Email */}
             <div className="relative">
